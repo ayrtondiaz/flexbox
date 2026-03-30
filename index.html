@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 07 & 08 — CSS3 Propiedades + Flexbox</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- NAVBAR — Patrón Flexbox (Clase 08, Slide 5)               -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <nav class="navbar">
+        <div class="logo">PP2 <span class="logo-accent">CSS</span></div>
+        <ul class="nav-links">
+            <li><a href="#tipografia">Tipografía</a></li>
+            <li><a href="#unidades">Unidades</a></li>
+            <li><a href="#colores">Colores</a></li>
+            <li><a href="#transiciones">Transiciones</a></li>
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#flexbox">Flexbox</a></li>
+        </ul>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- HERO — Centrado perfecto con Flexbox (Clase 08, Slide 7)  -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <p class="hero-badge">Prácticas Profesionalizantes II · Programador Junior</p>
+            <h1 class="hero-titulo">CSS3 Propiedades Avanzadas<br>+ Flexbox Completo</h1>
+            <p class="hero-subtitulo">Clase 07 y Clase 08 — Ing. Díaz Ayrton</p>
+            <p class="hero-temas">Tipografía · Colores · Fondos · Sombras · Transiciones · Variables CSS · Flexbox</p>
+            <a href="#tipografia" class="hero-btn">Explorar contenido ↓</a>
+        </div>
+    </section>
+
+    <main>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- CLASE 07, SLIDE 3 — Tipografía Web Profesional        -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="seccion" id="tipografia">
+            <div class="seccion-header">
+                <span class="seccion-badge">Clase 07 · Slide 3</span>
+                <h2 class="seccion-titulo">Tipografía Web Profesional</h2>
+                <p class="seccion-desc">font-family, font-size, line-height, font-weight, text-transform, letter-spacing, Google Fonts</p>
+            </div>
+
+            <div class="contenido-grid">
+                <!-- Ejemplo: Jerarquía tipográfica -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Jerarquía Tipográfica</h3>
+                    <div class="demo-area demo-tipografia">
+                        <p class="tipo-h1">h1 — 2.5rem / 700 / Inter</p>
+                        <p class="tipo-h2">h2 — 1.8rem / 600 / Inter</p>
+                        <p class="tipo-h3">h3 — 1.3rem / 600 / Inter</p>
+                        <p class="tipo-body">body — 1rem (16px) / 400 / line-height: 1.6</p>
+                        <p class="tipo-small">small — 0.875rem / color: #64748B</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #334155;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 1.8rem; font-weight: 600; }
+h3 { font-size: 1.3rem; font-weight: 600; }
+small { font-size: 0.875rem; color: #64748B; }</code></pre>
+                    </div>
+                </div>
+
+                <!-- Ejemplo: Propiedades de texto -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Propiedades de Texto</h3>
+                    <div class="demo-area">
+                        <p class="demo-uppercase">text-transform: uppercase</p>
+                        <p class="demo-lowercase">TEXT-TRANSFORM: LOWERCASE</p>
+                        <p class="demo-capitalize">text-transform: capitalize cada palabra</p>
+                        <p class="demo-spacing">letter-spacing: 4px</p>
+                        <p class="demo-line-through">text-decoration: line-through</p>
+                        <p class="demo-bold">font-weight: 700 (bold)</p>
+                        <p class="demo-italic">font-style: italic</p>
+                        <p class="demo-center">text-align: center</p>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>.uppercase  { text-transform: uppercase; }
+.capitalize { text-transform: capitalize; }
+.spacing    { letter-spacing: 4px; }
+.bold       { font-weight: 700; }
+.italic     { font-style: italic; }
+.center     { text-align: center; }</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-label">🎯 Tip</span>
+                Usá máximo 2 fuentes en un sitio: una para títulos (bold) y otra para body text (regular). Google Fonts es gratuito.
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- CLASE 07, SLIDE 4 — Unidades CSS                      -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="seccion seccion-alt" id="unidades">
+            <div class="seccion-header">
+                <span class="seccion-badge">Clase 07 · Slide 4</span>
+                <h2 class="seccion-titulo">Unidades CSS</h2>
+                <p class="seccion-desc">px, rem, em, %, vh, vw — Cuándo usar cada una</p>
+            </div>
+
+            <div class="tabla-responsive">
+                <table class="tabla-estilos">
+                    <thead>
+                        <tr>
+                            <th>Unidad</th>
+                            <th>Relativa a...</th>
+                            <th>Cuándo usarla</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>px</code></td>
+                            <td>Nada (absoluta)</td>
+                            <td>Bordes, sombras, valores fijos pequeños</td>
+                            <td><code>border: 1px solid #ccc</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>rem</code></td>
+                            <td>Font-size del &lt;html&gt;</td>
+                            <td>Tamaños de fuente, padding, margin</td>
+                            <td><code>font-size: 1.5rem</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>em</code></td>
+                            <td>Font-size del padre</td>
+                            <td>Espaciado relativo al texto del componente</td>
+                            <td><code>padding: 0.5em</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>%</code></td>
+                            <td>Tamaño del padre</td>
+                            <td>Anchos de contenedores, layouts fluidos</td>
+                            <td><code>width: 80%</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>vh</code></td>
+                            <td>1% del alto del viewport</td>
+                            <td>Secciones de pantalla completa (hero)</td>
+                            <td><code>min-height: 100vh</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>vw</code></td>
+                            <td>1% del ancho del viewport</td>
+                            <td>Tipografía responsive, anchos de pantalla</td>
+                            <td><code>font-size: 4vw</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Demo visual de unidades -->
+            <div class="contenido-grid">
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Demo Visual: Anchos con diferentes unidades</h3>
+                    <div class="demo-area">
+                        <div class="demo-unidad" style="width: 200px;">200px (fijo)</div>
+                        <div class="demo-unidad" style="width: 50%;">50% (del padre)</div>
+                        <div class="demo-unidad" style="width: 80%;">80% (del padre)</div>
+                        <div class="demo-unidad" style="width: 10rem;">10rem (160px si base=16px)</div>
+                        <div class="demo-unidad" style="width: 30vw;">30vw (30% del viewport)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-label">🎯 Regla simple</span>
+                <strong>rem</strong> para casi todo, <strong>px</strong> para bordes/sombras, <strong>%</strong> para anchos, <strong>vh</strong> para alturas de sección.
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- CLASE 07, SLIDE 5 — Colores, Fondos y Sombras         -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="seccion" id="colores">
+            <div class="seccion-header">
+                <span class="seccion-badge">Clase 07 · Slide 5</span>
+                <h2 class="seccion-titulo">Colores, Fondos y Sombras</h2>
+                <p class="seccion-desc">Hexadecimal, rgb(), hsl(), gradientes, background, border-radius, box-shadow</p>
+            </div>
+
+            <div class="contenido-grid">
+                <!-- Formatos de color -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Formatos de Color</h3>
+                    <div class="demo-area">
+                        <div class="demo-color-row">
+                            <div class="demo-color-swatch" style="background: #1E293B;"></div>
+                            <div>
+                                <code>#1E293B</code>
+                                <span class="demo-color-label">Hexadecimal</span>
+                            </div>
+                        </div>
+                        <div class="demo-color-row">
+                            <div class="demo-color-swatch" style="background: rgb(46, 117, 182);"></div>
+                            <div>
+                                <code>rgb(46, 117, 182)</code>
+                                <span class="demo-color-label">RGB</span>
+                            </div>
+                        </div>
+                        <div class="demo-color-row">
+                            <div class="demo-color-swatch" style="background: hsl(215, 33%, 17%);"></div>
+                            <div>
+                                <code>hsl(215, 33%, 17%)</code>
+                                <span class="demo-color-label">HSL (más intuitivo)</span>
+                            </div>
+                        </div>
+                        <div class="demo-color-row">
+                            <div class="demo-color-swatch" style="background: rgba(0,0,0,0.5);"></div>
+                            <div>
+                                <code>rgba(0, 0, 0, 0.5)</code>
+                                <span class="demo-color-label">RGBA (con transparencia)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>color: #1E293B;              /* Hexadecimal */
+color: rgb(46, 117, 182);    /* RGB */
+color: hsl(215, 33%, 17%);   /* HSL */
+color: rgba(0, 0, 0, 0.5);  /* RGBA */</code></pre>
+                    </div>
+                </div>
+
+                <!-- Gradientes y fondos -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Gradientes y Fondos</h3>
+                    <div class="demo-area">
+                        <div class="demo-gradiente demo-grad-1">linear-gradient(135deg, #1B2A4A, #2E75B6)</div>
+                        <div class="demo-gradiente demo-grad-2">linear-gradient(to right, #F59E0B, #E65100)</div>
+                        <div class="demo-gradiente demo-grad-3">radial-gradient(circle, #2E75B6, #1B2A4A)</div>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>/* Gradiente diagonal */
+background: linear-gradient(135deg, #1B2A4A, #2E75B6);
+
+/* Gradiente horizontal */
+background: linear-gradient(to right, #F59E0B, #E65100);
+
+/* Gradiente radial */
+background: radial-gradient(circle, #2E75B6, #1B2A4A);</code></pre>
+                    </div>
+                </div>
+
+                <!-- Border-radius -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Border-radius</h3>
+                    <div class="demo-area demo-radius-grid">
+                        <div class="demo-radius" style="border-radius: 0;">0px</div>
+                        <div class="demo-radius" style="border-radius: 4px;">4px</div>
+                        <div class="demo-radius" style="border-radius: 8px;">8px</div>
+                        <div class="demo-radius" style="border-radius: 16px;">16px</div>
+                        <div class="demo-radius" style="border-radius: 50%;">50%</div>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>border-radius: 8px;   /* esquinas redondeadas */
+border-radius: 50%;   /* círculo perfecto */</code></pre>
+                    </div>
+                </div>
+
+                <!-- Box-shadow -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Box-shadow</h3>
+                    <div class="demo-area demo-shadow-grid">
+                        <div class="demo-shadow demo-shadow-1">
+                            <small>Sutil</small>
+                        </div>
+                        <div class="demo-shadow demo-shadow-2">
+                            <small>Elevada</small>
+                        </div>
+                        <div class="demo-shadow demo-shadow-3">
+                            <small>Interna</small>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>/* Sutil */
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+/* Elevada */
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+/* Interna (inset) */
+box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-label">🎯 Tip</span>
+                hsl() es la mejor forma de manejar colores: H=tono (0-360), S=saturación, L=luminosidad, A=alpha.
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- CLASE 07, SLIDE 6 — Transiciones CSS                  -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="seccion seccion-alt" id="transiciones">
+            <div class="seccion-header">
+                <span class="seccion-badge">Clase 07 · Slide 6</span>
+                <h2 class="seccion-titulo">Transiciones CSS</h2>
+                <p class="seccion-desc">transition, transform, :hover, :focus, :active — Animaciones simples sin JavaScript</p>
+            </div>
+
+            <div class="contenido-grid">
+                <!-- Botones con transiciones -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Botones con Transición</h3>
+                    <p class="card-instruccion">👆 Pasá el mouse sobre cada botón para ver el efecto</p>
+                    <div class="demo-area demo-botones-grid">
+                        <button class="demo-btn demo-btn-basico">Hover básico</button>
+                        <button class="demo-btn demo-btn-elevado">Elevación</button>
+                        <button class="demo-btn demo-btn-escala">Scale</button>
+                        <button class="demo-btn demo-btn-outline">Outline → Fill</button>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>.boton {
+  background: #2E75B6;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* ← en estado NORMAL */
+}
+
+.boton:hover {
+  background: #1B2A4A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.boton:active {
+  transform: scale(0.97);
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Tarjeta con transición -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Tarjeta con Hover</h3>
+                    <p class="card-instruccion">👆 Pasá el mouse sobre la tarjeta</p>
+                    <div class="demo-area">
+                        <div class="demo-tarjeta-hover">
+                            <div class="demo-tarjeta-icono">🚀</div>
+                            <h4>Desarrollo Web</h4>
+                            <p>Creamos sitios web modernos y responsivos con las últimas tecnologías.</p>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>.tarjeta {
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Input con focus -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Input con Transición de Focus</h3>
+                    <p class="card-instruccion">👆 Hacé click en el input para ver el efecto</p>
+                    <div class="demo-area">
+                        <label class="demo-label" for="demo-input-1">Nombre completo:</label>
+                        <input class="demo-input" type="text" id="demo-input-1" placeholder="Ej: Juan Pérez">
+                        <label class="demo-label" for="demo-input-2">Email:</label>
+                        <input class="demo-input" type="email" id="demo-input-2" placeholder="juan@ejemplo.com">
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>input {
+  border: 2px solid #E2E8F0;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: border-color 0.3s,
+              box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #2E75B6;
+  box-shadow: 0 0 0 3px rgba(46,117,182,0.15);
+  outline: none;
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Timing functions -->
+                <div class="ejemplo-card">
+                    <h3 class="card-titulo">Timing Functions</h3>
+                    <p class="card-instruccion">👆 Hover sobre cada barra para comparar velocidades</p>
+                    <div class="demo-area demo-timing-area">
+                        <div class="demo-timing-row">
+                            <span class="demo-timing-label">ease</span>
+                            <div class="demo-timing-track"><div class="demo-timing-ball" style="transition-timing-function: ease;"></div></div>
+                        </div>
+                        <div class="demo-timing-row">
+                            <span class="demo-timing-label">ease-in</span>
+                            <div class="demo-timing-track"><div class="demo-timing-ball" style="transition-timing-function: ease-in;"></div></div>
+                        </div>
+                        <div class="demo-timing-row">
+                            <span class="demo-timing-label">ease-out</span>
+                            <div class="demo-timing-track"><div class="demo-timing-ball" style="transition-timing-function: ease-out;"></div></div>
+                        </div>
+                        <div class="demo-timing-row">
+                            <span class="demo-timing-label">ease-in-out</span>
+                            <div class="demo-timing-track"><div class="demo-timing-ball" style="transition-timing-function: ease-in-out;"></div></div>
+                        </div>
+                        <div class="demo-timing-row">
+                            <span class="demo-timing-label">linear</span>
+                            <div class="demo-timing-track"><div class="demo-timing-ball" style="transition-timing-function: linear;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-label">🎯 Importante</span>
+                <code>transition</code> va en el estado <strong>NORMAL</strong> (no en :hover). Propiedades animables: color, background, transform, opacity, box-shadow.
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- CLASE 07, SLIDE 7 — Variables CSS                     -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="seccion" id="variables">
+            <div class="seccion-header">
+                <span class="seccion-badge">Clase 07 · Slide 7</span>
+                <h2 class="seccion-titulo">Variables CSS (Custom Properties)</h2>
+                <p class="seccion-desc">:root, var(), --color-primary — Paleta centralizada y temas</p>
+            </div>
+
+            <div class="contenido-grid">
+                <div class="ejemplo-card ejemplo-card-wide">
+                    <h3 class="card-titulo">Definir y Usar Variables</h3>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>/* Definir variables en :root (disponibles en TODO el CSS) */
+:root {
+  --color-primary: #2E75B6;
+  --color-secondary: #1B2A4A;
+  --color-accent: #F59E0B;
+  --color-text: #334155;
+  --color-bg: #F8FAFC;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --font-main: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Usar las variables con var() */
+body { font-family: var(--font-main); color: var(--color-text); }
+.header { background: var(--color-secondary); }
+.boton  { background: var(--color-primary); border-radius: var(--radius); }
+.tarjeta { box-shadow: var(--shadow); border-radius: var(--radius); }
+
+/* Cambiar el tema completo modificando SOLO las variables */
+.dark-theme {
+  --color-bg: #1E293B;
+  --color-text: #F8FAFC;
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Demo visual de la paleta -->
+                <div class="ejemplo-card ejemplo-card-wide">
+                    <h3 class="card-titulo">Paleta de Variables de este Sitio</h3>
+                    <div class="demo-area demo-paleta">
+                        <div class="demo-paleta-item" style="background: var(--color-secondary);">
+                            <span>--color-secondary</span>
+                            <code>#1B2A4A</code>
+                        </div>
+                        <div class="demo-paleta-item" style="background: var(--color-primary);">
+                            <span>--color-primary</span>
+                            <code>#2E75B6</code>
+                        </div>
+                        <div class="demo-paleta-item" style="background: var(--color-accent);">
+                            <span>--color-accent</span>
+                            <code>#F59E0B</code>
+                        </div>
+                        <div class="demo-paleta-item demo-paleta-light" style="background: var(--color-bg);">
+                            <span>--color-bg</span>
+                            <code>#F8FAFC</code>
+                        </div>
+                        <div class="demo-paleta-item demo-paleta-light" style="background: var(--color-border); ">
+                            <span>--color-border</span>
+                            <code>#E2E8F0</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-label">🎯 Tip</span>
+                Definí tu paleta de colores en <code>:root</code> con variables CSS. Así podés cambiar TODO el diseño modificando un solo lugar.
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- CLASE 08, SLIDES 3-7 — Flexbox Completo               -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="seccion seccion-alt" id="flexbox">
+            <div class="seccion-header">
+                <span class="seccion-badge">Clase 08 · Slides 3-7</span>
+                <h2 class="seccion-titulo">Flexbox Completo</h2>
+                <p class="seccion-desc">display: flex · justify-content · align-items · flex-wrap · gap · flex-grow · flex-shrink · flex-basis</p>
+            </div>
+
+            <!-- Slide 3: Propiedades del contenedor -->
+            <h3 class="sub-seccion-titulo">Propiedades del Contenedor (Padre) — Slide 3</h3>
+
+            <div class="contenido-grid">
+                <!-- justify-content -->
+                <div class="ejemplo-card ejemplo-card-wide">
+                    <h3 class="card-titulo">justify-content (eje principal)</h3>
+                    <div class="demo-area">
+                        <p class="demo-prop-label">flex-start</p>
+                        <div class="demo-flex-container" style="justify-content: flex-start;">
+                            <div class="demo-flex-item">1</div>
+                            <div class="demo-flex-item">2</div>
+                            <div class="demo-flex-item">3</div>
+                        </div>
+
+                        <p class="demo-prop-label">center</p>
+                        <div class="demo-flex-container" style="justify-content: center;">
+                            <div class="demo-flex-item">1</div>
+                            <div class="demo-flex-item">2</div>
+                            <div class="demo-flex-item">3</div>
+                        </div>
+
+                        <p class="demo-prop-label">space-between</p>
+                        <div class="demo-flex-container" style="justify-content: space-between;">
+                            <div class="demo-flex-item">1</div>
+                            <div class="demo-flex-item">2</div>
+                            <div class="demo-flex-item">3</div>
+                        </div>
+
+                        <p class="demo-prop-label">space-around</p>
+                        <div class="demo-flex-container" style="justify-content: space-around;">
+                            <div class="demo-flex-item">1</div>
+                            <div class="demo-flex-item">2</div>
+                            <div class="demo-flex-item">3</div>
+                        </div>
+
+                        <p class="demo-prop-label">space-evenly</p>
+                        <div class="demo-flex-container" style="justify-content: space-evenly;">
+                            <div class="demo-flex-item">1</div>
+                            <div class="demo-flex-item">2</div>
+                            <div class="demo-flex-item">3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- align-items -->
+                <div class="ejemplo-card ejemplo-card-wide">
+                    <h3 class="card-titulo">align-items (eje cruzado)</h3>
+                    <div class="demo-area">
+                        <p class="demo-prop-label">flex-start</p>
+                        <div class="demo-flex-container demo-flex-tall" style="align-items: flex-start;">
+                            <div class="demo-flex-item demo-h-sm">1</div>
+                            <div class="demo-flex-item demo-h-md">2</div>
+                            <div class="demo-flex-item demo-h-lg">3</div>
+                        </div>
+
+                        <p class="demo-prop-label">center</p>
+                        <div class="demo-flex-container demo-flex-tall" style="align-items: center;">
+                            <div class="demo-flex-item demo-h-sm">1</div>
+                            <div class="demo-flex-item demo-h-md">2</div>
+                            <div class="demo-flex-item demo-h-lg">3</div>
+                        </div>
+
+                        <p class="demo-prop-label">flex-end</p>
+                        <div class="demo-flex-container demo-flex-tall" style="align-items: flex-end;">
+                            <div class="demo-flex-item demo-h-sm">1</div>
+                            <div class="demo-flex-item demo-h-md">2</div>
+                            <div class="demo-flex-item demo-h-lg">3</div>
+                        </div>
+
+                        <p class="demo-prop-label">stretch (default)</p>
+                        <div class="demo-flex-container demo-flex-tall" style="align-items: stretch;">
+                            <div class="demo-flex-item">1</div>
+                            <div class="demo-flex-item">2</div>
+                            <div class="demo-flex-item">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Propiedades de items -->
+            <h3 class="sub-seccion-titulo">Propiedades de los Items (Hijos) — Slide 4</h3>
+
+            <div class="contenido-grid">
+                <div class="ejemplo-card ejemplo-card-wide">
+                    <h3 class="card-titulo">flex-grow, flex-shrink, flex-basis</h3>
+                    <div class="demo-area">
+                        <p class="demo-prop-label">flex-grow: 0 (no crece — default)</p>
+                        <div class="demo-flex-container">
+                            <div class="demo-flex-item" style="flex-grow: 0;">grow:0</div>
+                            <div class="demo-flex-item" style="flex-grow: 0;">grow:0</div>
+                            <div class="demo-flex-item" style="flex-grow: 0;">grow:0</div>
+                        </div>
+
+                        <p class="demo-prop-label">flex-grow: 1 (todos crecen igual)</p>
+                        <div class="demo-flex-container">
+                            <div class="demo-flex-item" style="flex-grow: 1;">grow:1</div>
+                            <div class="demo-flex-item" style="flex-grow: 1;">grow:1</div>
+                            <div class="demo-flex-item" style="flex-grow: 1;">grow:1</div>
+                        </div>
+
+                        <p class="demo-prop-label">flex-grow: diferenciado (1, 2, 1)</p>
+                        <div class="demo-flex-container">
+                            <div class="demo-flex-item" style="flex-grow: 1;">grow:1</div>
+                            <div class="demo-flex-item demo-flex-item-accent" style="flex-grow: 2;">grow:2</div>
+                            <div class="demo-flex-item" style="flex-grow: 1;">grow:1</div>
+                        </div>
+
+                        <p class="demo-prop-label">flex: 1 1 280px (el shorthand mágico para cards)</p>
+                        <div class="demo-flex-container" style="flex-wrap: wrap; gap: 10px;">
+                            <div class="demo-flex-item" style="flex: 1 1 280px;">flex: 1 1 280px</div>
+                            <div class="demo-flex-item" style="flex: 1 1 280px;">flex: 1 1 280px</div>
+                            <div class="demo-flex-item" style="flex: 1 1 280px;">flex: 1 1 280px</div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>.item {
+  flex-grow: 1;       /* cuánto puede CRECER */
+  flex-shrink: 1;     /* cuánto puede REDUCIRSE */
+  flex-basis: 300px;  /* tamaño base inicial */
+
+  /* Shorthand: */
+  flex: 1 1 300px;    /* grow shrink basis */
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Patrón Navbar -->
+            <h3 class="sub-seccion-titulo">Patrón 1: Navbar — Slide 5</h3>
+
+            <div class="contenido-grid">
+                <div class="ejemplo-card ejemplo-card-wide">
+                    <h3 class="card-titulo">Navbar con Flexbox (space-between)</h3>
+                    <div class="demo-area">
+                        <nav class="demo-navbar">
+                            <div class="demo-navbar-logo">MiSitio</div>
+                            <ul class="demo-navbar-links">
+                                <li><a href="#">Inicio</a></li>
+                                <li><a href="#">Servicios</a></li>
+                                <li><a href="#">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--color-secondary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Patrón Cards -->
+            <h3 class="sub-seccion-titulo">Patrón 2: Grilla de Tarjetas Responsive — Slide 6</h3>
+
+            <div class="contenido-grid">
+                <div class="ejemplo-card ejemplo-card-wide">
+                    <h3 class="card-titulo">Cards con flex-wrap (responsive automático)</h3>
+                    <div class="demo-area">
+                        <div class="demo-cards-container">
+                            <article class="demo-card">
+                                <div class="demo-card-icono">🎨</div>
+                                <h4>Diseño UI/UX</h4>
+                                <p>Interfaces intuitivas y atractivas centradas en el usuario.</p>
+                            </article>
+                            <article class="demo-card">
+                                <div class="demo-card-icono">💻</div>
+                                <h4>Desarrollo Web</h4>
+                                <p>Sitios web modernos, rápidos y responsivos con las últimas tecnologías.</p>
+                            </article>
+                            <article class="demo-card">
+                                <div class="demo-card-icono">📱</div>
+                                <h4>Apps Móviles</h4>
+                                <p>Aplicaciones nativas y multiplataforma de alto rendimiento.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 2rem;
+}
+
+.card {
+  flex: 1 1 280px;   /* ← LA LÍNEA MÁGICA */
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Resultado: 3 en desktop, 2 en tablet, 1 en móvil */</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Centrado perfecto -->
+            <h3 class="sub-seccion-titulo">Patrón 3: Centrado Perfecto — Slide 7</h3>
+
+            <div class="contenido-grid">
+                <div class="ejemplo-card ejemplo-card-wide">
+                    <h3 class="card-titulo">Centrado vertical + horizontal (3 líneas mágicas)</h3>
+                    <div class="demo-area">
+                        <div class="demo-centrado-container">
+                            <div class="demo-centrado-content">
+                                <h4>¡Estoy centrado!</h4>
+                                <p>display: flex + justify-content: center + align-items: center</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <span class="code-label">CSS</span>
+<pre><code>.hero {
+  display: flex;
+  justify-content: center;  /* centrado horizontal */
+  align-items: center;      /* centrado vertical */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1B2A4A, #2E75B6);
+  color: white;
+  text-align: center;
+}
+
+/* 3 líneas de Flexbox = centrado perfecto.
+   Las 3 líneas más útiles de CSS. */</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="tip-label">🎯 Memorizar</span>
+                <strong>justify-content</strong> = eje principal (horizontal).
+                <strong>align-items</strong> = eje cruzado (vertical).
+                <strong>flex: 1 1 280px + wrap</strong> = grilla responsive automática sin media queries.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- FOOTER                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <p class="footer-titulo">Prácticas Profesionalizantes II · Programador Junior</p>
+            <p class="footer-subtitulo">Clase 07: CSS3 Propiedades Avanzadas + Clase 08: Flexbox Completo</p>
+            <p class="footer-creditos">Por Ing. Díaz Ayrton — 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
